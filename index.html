@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <title>Contact form</title>
+</head>
+
+<body>
+
+    <main>
+        <form onsubmit="return validateForm()">
+            <header>
+                <h1>Contact Us</h1>
+            </header>
+
+            <div class="group1">
+                <div class="first-name-container">
+                    <label for="first-name" class="required">First Name</label>
+                    <input type="text" id="first-name" name="first-name" autocomplete="given-name">
+                    <span id="first-name-error" class="error-msg">This field is required</span>
+                </div>
+
+                <div class="last-name-container">
+                    <label for="last-name" class="required">Last Name</label>
+                    <input type="text" id="last-name" name="last-name" autocomplete="family-name">
+                    <span id="last-name-error" class="error-msg">This field is required</span>
+                </div>
+            </div>
+
+            <div class="email-container">
+                <label for="email" class="required">Email Address</label>
+                <input type="email" id="email" name="email" autocomplete="email">
+                <span id="email-error" class="error-msg">Please enter a valid email address</span>
+            </div>
+            <fieldset>
+                <legend class="required">Query Type</legend>
+                <div class="group2">
+                    <label for="general-enquiry" class="radioItem">
+                        <input type="radio" id="option1" name="query-type" value="general" class="radioButton">
+                        General Enquiry
+                    </label>
+                    <label for="support-request" class="radioItem">
+                        <input type="radio" id="option2" name="query-type" value="support" class="radioButton">
+                        Support Request
+                    </label>
+                </div>
+                <span id="query-error" class="error-msg">Please select a query type</span>
+            </fieldset>
+
+            <div class="msg-container">
+                <label for="message" class="required">Message</label>
+                <textarea name="message" id="message" rows="3"></textarea>
+                <span id="message-error" class="error-msg">This field is required</span>
+            </div>
+
+            <div class="consent-container">
+                <label for="consent-checkbox" class="checkboxItem">
+                    <input type="checkbox" id="consent-checkbox" name="consent" value="yes">
+                    <p class="required">I consent to being contacted by the team</p>
+                </label>
+                <span id="consent-error" class="error-msg">To submit this form, please consent to being contacted</span>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </main>
+
+    <span id="notification" class="notification-success">
+        <div class="notification-header">
+            <img src="./assets/images/icon-success-check.svg" alt="success icon">
+            <h5>Message Sent!</h5>
+        </div>
+        <p>Thanks for completing the form. We'll be in touch soon!</p>
+    </span>
+    <script src="index.js"></script>
+</body></html>

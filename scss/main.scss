@@ -1,0 +1,346 @@
+//Font family
+@font-face {
+    font-family: 'Karla';
+    src: url('../assets/fonts/Karla-VariableFont_wght.ttf')format('truetype');
+}
+
+//Colors
+$grey-900: #2A4144;
+$grey-500: #86A2A5;
+$green-600: #0C7D69;
+$green-200: #E0F1E8;
+$red: #D73C3C;
+
+//Typo
+@mixin typography($size, $color, $weight, $line-height, $letter-spacing) {
+    font-size: $size;
+    color: $color;
+    font-weight: $weight;
+    line-height: $line-height;
+    letter-spacing: $letter-spacing;
+}
+
+//Reset
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+//Styling
+html,
+body {
+    width: 100%;
+    height: 100%;
+    font-family: 'Karla', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    background-color: $green-200;
+}
+
+main {
+    border-radius: 16px;
+    background-color: white;
+}
+
+h1,
+label,
+legend {
+    color: $grey-900;
+}
+
+h1 {
+    @include typography(2rem, $grey-900, 700, 100%, -1px);
+    margin-bottom: 32px;
+}
+
+label {
+    @include typography(1rem, $grey-900, 400, 150%, 0);
+}
+
+input[type="text"],
+textarea,
+input[type="email"] {
+    margin-top: 8px;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    font-family: 'Karla', sans-serif;
+    @include typography(1.125rem, $grey-900, 400, 150%, 0);
+    padding: 12px 24px 12px 24px;
+    color: $grey-900;
+}
+
+fieldset {
+    border: none;
+
+    legend {
+        margin-bottom: 16px;
+    }
+}
+
+fieldset label {
+    min-height: 51px;
+    @include typography(1.125rem, $grey-900, 400, 150%, 0);
+    gap: 0 12px;
+    padding: 12px 24px 12px 24px;
+}
+
+textarea {
+    resize: none;
+}
+
+input[type="text"],
+textarea,
+input[type="email"],
+fieldset label {
+    outline: none;
+    border: solid 1px $grey-500;
+    border-radius: 8px;
+}
+
+.email-container,
+.last-name-container,
+.first-name-container,
+.msg-container,
+fieldset {
+    margin-bottom: 24px;
+}
+
+.consent-container {
+    margin-top: 40px;
+    margin-bottom: 40px;
+
+    label {
+        display: flex;
+        align-items: center;
+        gap: 0 16px;
+    }
+}
+
+button[type="submit"] {
+    font-family: 'Karla', sans-serif;
+    @include typography(1.125rem, white, 700, 150%, 0);
+    height: 59px;
+    border-radius: 8px;
+    border-style: none;
+    background-color: $green-600;
+}
+
+button[type="submit"]:hover,
+button[type="submit"]:active {
+    background-color: $grey-900;
+    cursor: pointer;
+}
+
+//MOBILE
+@media(max-width: 48rem) {
+    main {
+        width: 100%;
+        margin: 32px 16px auto 16px;
+        padding: 24px;
+    }
+
+    label + input,
+    label + textarea,
+    button {
+        display: block;
+        width: 100%;
+    }
+
+    fieldset label {
+        display: flex;
+        align-items: center;
+    }
+
+    fieldset {
+        .group2 {
+            display: flex;
+            flex-direction: column;
+            gap: 16px 0;
+        }
+    }
+
+    .notification-success {
+        max-width: 327px;
+    }
+}
+
+//TABLET
+@media(min-width: 48.063rem) and (max-width: 64rem) {
+    main {
+        width: 100%;
+        max-width: 736px;
+        margin: 128px 39px auto 39px;
+        padding: 40px;
+    }
+
+    label + input,
+    label + textarea,
+    button {
+        display: block;
+        width: 100%;
+    }
+
+    .group1 {
+        display: flex;
+        gap: 0 16px;
+
+        div {
+            flex-grow: 1;
+        }
+    }
+
+    .group2 {
+        display: flex;
+        gap: 0 16px;
+
+        label {
+            flex-grow: 1;
+        }
+    }
+
+    .notification-success {
+        max-width: 450px;
+    }
+}
+
+//DESKTOP
+@media(min-width: 64.063rem) {
+    main {
+        width: 100%;
+        max-width: 736px;
+        margin: 128px 39px auto 39px;
+        padding: 40px;
+    }
+
+    label + input,
+    label + textarea,
+    button {
+        display: block;
+        width: 100%;
+    }
+
+    .group1 {
+        display: flex;
+        gap: 0 16px;
+
+        div {
+            flex-grow: 1;
+        }
+    }
+
+    .group2 {
+        display: flex;
+        gap: 0 16px;
+
+        label {
+            flex-grow: 1;
+        }
+    }
+
+    .notification-success {
+        max-width: 450px;
+    }
+}
+
+
+.error-msg {
+    @include typography(1rem, $red, 400, 150%, 0);
+}
+
+span.error-msg {
+    display: block;
+    margin-top: 8px;
+}
+
+.hide {
+    display: none !important;
+}
+
+.error-input {
+    border: solid 1px $red !important;
+}
+
+.required::after {
+    content: '*';
+    margin-left: 8px;
+    color: $green-600;
+}
+
+//Radio button styling
+.radioItem {
+    display: flex;
+    align-items: center;
+    line-height: 1;
+    cursor: pointer;
+}
+
+.radioButton {
+    appearance: none;
+    position: relative;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #86a2a580;
+    border-radius: 9999px;
+    cursor: pointer;
+}
+
+.radioButton:checked {
+    border: 2px solid #0c7d69;
+}
+
+.radioButton:checked::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    width: 10px;
+    height: 10px;
+    margin: auto;
+    border-radius: 9999px;
+    background-color: #0c7d69;
+}
+
+//Checkbox styling
+input[type="checkbox"] {
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border: solid 2px $grey-500;
+    border-radius: 2px;
+    cursor: pointer;
+}
+
+input[type="checkbox"]:checked {
+    border: solid 1px $green-600;
+    background-image: url('../assets/images/icon-checkbox-check.svg');
+}
+
+//Notification
+.notification-success {
+    position: absolute;
+    padding: 24px;
+    border-radius: 12px;
+    background-color: $grey-900;
+    transition: top 0.5s ease 0s;
+
+    .notification-header {
+        display: flex;
+        align-items: center;
+        gap: 0 8px;
+        margin-bottom: 5px;
+    }
+
+    h5 {
+        @include typography(1.125rem, white, 700, 150%, 0);
+    }
+
+    p {
+        @include typography(1rem, $green-200, 400, 150%, 0);
+    }
+}
