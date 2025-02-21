@@ -297,7 +297,7 @@ input[type=checkbox]:checked {
 }
 
 .notification-success {
-  position: absolute;
+  position: fixed;
   padding: 24px;
   border-radius: 12px;
   background-color: #2A4144;
