@@ -12,7 +12,7 @@ let timeoutRef;
 function initialisation() {
     hideAllErrorMsg();
     console.log(notifHeight);
-    notification.style.top = `-${notifHeight + 30}px`;
+    notification.style.top = `-${notifHeight + 100}px`;
 }
 
 initialisation();
