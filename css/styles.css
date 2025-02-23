@@ -112,6 +112,7 @@ fieldset {
   margin-bottom: 40px;
 }
 .consent-container label {
+  cursor: pointer;
   display: flex;
   align-items: center;
   gap: 0 16px;
