@@ -223,6 +223,13 @@ button[type=submit]:active {
     max-width: 450px;
   }
 }
+
+input[type="text"]:focus,
+textarea:focus,
+input[type="email"]:focus {
+    border: solid 1px $green-600;
+}
+
 .error-msg {
   font-size: 1rem;
   color: #D73C3C;
@@ -255,6 +262,11 @@ span.error-msg {
   align-items: center;
   line-height: 1;
   cursor: pointer;
+}
+
+.radioItem:has(.radioButton:checked) {
+    background-color: $green-200;
+    border: solid 1px $green-600;
 }
 
 .radioButton {
